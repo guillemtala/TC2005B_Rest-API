@@ -1,0 +1,72 @@
+### Variables
+@baseUrl = http://localhost:3000
+
+### 1. Rutas Iniciales
+
+# GET / - Mensaje de bienvenida e información de endpoints
+GET {{baseUrl}}/
+
+###
+
+# GET /marco - Responde "polo"
+GET {{baseUrl}}/marco
+
+###
+
+# GET /ping - Responde "pong"
+GET {{baseUrl}}/ping
+
+###
+
+### 2. Operaciones de Usuarios (CRUD)
+
+# GET /users - Obtener la lista de todos los usuarios
+GET {{baseUrl}}/users
+
+###
+
+# GET /users/:id - Obtener un usuario por su ID
+GET {{baseUrl}}/users/1
+
+###
+
+# POST /users - Crear un nuevo usuario
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "username": "carlos_dev",
+  "email": "carlos@example.com",
+  "password": "miPasswordSeguro123",
+  "role": "user"
+}
+
+###
+
+# PUT /users/:id - Actualizar datos de un usuario existente
+PUT {{baseUrl}}/users/1
+Content-Type: application/json
+
+{
+  "username": "admin_updated",
+  "email": "admin_updated@example.com",
+  "role": "admin"
+}
+
+###
+
+# DELETE /users/:id - Eliminar un usuario por ID
+DELETE {{baseUrl}}/users/4
+
+###
+
+### 3. Autenticación
+
+# POST /login - Iniciar sesión de usuario
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "login": "admin@example.com",
+  "password": "admin123"
+}
